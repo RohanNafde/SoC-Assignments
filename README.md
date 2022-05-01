@@ -1,1 +1,1 @@
-# SoC-Assignments
+This readme is now committed
