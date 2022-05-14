@@ -1,10 +1,19 @@
+body
+{
+    background-image: url('355224.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+}
+
 #time
 {
     
     position: relative;
     text-align: center;
     font-size: 40px;
-    color:darkmagenta ;
+    color: magenta;
+    opacity: 0.8;
 }
 
 #background
@@ -16,8 +25,8 @@
     right: 0;
     z-index: -1;
     overflow: hidden;
-    color: #2795a3;
-    opacity: 0.4;
+    color: aqua;
+    opacity: 0.5;
     font-size: 85px;
     align-items: center;
 }
@@ -28,7 +37,8 @@
     text-align: center;
     font-style: bold;
     font-family: 'Times New Roman', Times, serif;
-    color: midnightblue;
+    color: lawngreen;
+    opacity: 0.7;
 }
 
 #loader
