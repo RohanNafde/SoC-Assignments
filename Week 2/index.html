@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Countdown to new year</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+    </head>
+
+    <body style="background-image: linear-gradient(to right, rgb(210, 109, 109),rgb(137, 112, 66), rgb(148, 148, 72));", onload="myFunction()">
+        
+        <div id="title">
+            <h1><u>New Year Countdown</u></h1>
+        </div>
+        
+        <div id="loader"></div>
+        
+        <div style="display:none;" id="myDiv" class="animate-bottom">
+            <div id="main">
+                <h2><p id="time"></p></h2><p id="time"></p>
+                <div id="background">
+                    <p id="year"></p>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            var myVar;
+            
+            function myFunction() 
+            {
+                myVar = setTimeout(showPage, 3000);
+            }
+            
+            function showPage()
+            {
+                document.getElementById("loader").style.display = "none";
+                document.getElementById("myDiv").style.display = "block";
+            }
+        </script>
+        
+        <script>
+            function display(num)
+            {
+                numString = num.toString(10)
+                if(num < 10)
+                {
+                    return "0" + numString
+                }
+                else
+                {
+                    return numString
+                }
+            }
+
+            var x = setInterval(function() 
+            {
+                var ob = new Date();
+                var year = ob.getFullYear() + 1;
+                var current = ob.getTime();
+                var end = new Date("jan 1, "+year+" 00:00:00").getTime();
+                var diff = end - current
+
+                var sec = (Math.floor(diff / 1000)) % 60
+                var min = (Math.floor(diff / 60000)) % 60
+                var hour = (Math.floor(diff / 3600000)) % 24
+                var day = (Math.floor(diff/86400000))
+
+                document.getElementById("time").innerHTML =  day + "d : " + display(hour) + "h : " + display(min) + "m : " + display(sec) + "s";
+                document.getElementById("year").innerHTML = year.toString(10)
+            }, 1000)
+        </script>
+    </body>
+</html>
